@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial_Add</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        function factorial(x){
+            var f=1;
+            for(var i=1;i<=x;i++){
+                f=f*i;
+            }
+            return f;
+        }
+        $(document).ready(function(){
+            $('#add').click(function(){
+                var x=parseInt($('#num1').val());
+                var y=parseInt($('#num2').val());
+                $('#Rs').val(x+y);
+                $('#answer').html(x+y);
+            })
+            $('#fact').click(function(){
+                var x=parseInt($('#num1').val());
+                var answer=factorial(x);
+                $('#Rs').val(answer);
+                $('#answer').html(answer);
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <form>
+    <label for="Number1">Number1: </label>
+    <input type="number" id="num1" name="num1"><br>
+    <br>
+    <label for="Number2">Number2: </label>
+    <input type="number" id="num2" name="num2"><br>
+    <br>
+    <label for="Result">Result: </label>
+    <input type="number" id="Rs" name="Rs" readonly><br>
+    <br>
+    <button type="button" name="btn" id="add" value="add">Addition: </button>
+    <button type="button" name="btn" id="fact" value="fact">Factorial: </button>
+    <button type="reset" name="btn" id="cancel" value="cancel">Cancel: </button>
+</form>
+<p id="answer">Your answer is: </p>
+</body>
+</html>

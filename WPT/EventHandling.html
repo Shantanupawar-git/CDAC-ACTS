@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(':input[type="text"]').focus(function(){
+                $(this).css("background-color","yellow");
+            })
+            $(':input[type="text"]').blur(function(){
+                $(this).css("background-color","black");
+            })
+            $('p').hover(function(){
+                console.log("in hover 1");
+                $(this).css("background-color","yellow")
+            },function(){
+                console.log("in hover 2");
+                $(this).css("background-color","blue")
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+    <p>This is p</p>
+    <form >
+        Name: <input type="text" id="name" name="name">
+        Mobile: <input type="text" id="mobile" name="mobile">
+        Data: <input type="text" id="data" name="data">
+    </form>
+</body>
+</html>
